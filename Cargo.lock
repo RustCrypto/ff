@@ -79,32 +79,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "21a53c0a4d288377e7415b53dcfc3c04da5cdc2cc95c8d5ac178b58f0b861ad6"
 
 [[package]]
-name = "ff"
-version = "0.14.0-pre.0"
-dependencies = [
- "bitvec",
- "blake2b_simd",
- "byteorder",
- "ff_derive",
- "rand",
- "rand_core",
- "subtle",
-]
-
-[[package]]
-name = "ff_derive"
-version = "0.14.0-pre.0"
-dependencies = [
- "addchain",
- "num-bigint",
- "num-integer",
- "num-traits",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "funty"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -218,6 +192,32 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "99d9a13982dcf210057a8a78572b2217b667c3beacbf3a0d8b454f6f82837d38"
 dependencies = [
  "getrandom",
+]
+
+[[package]]
+name = "rustcrypto-ff"
+version = "0.14.0-pre"
+dependencies = [
+ "bitvec",
+ "blake2b_simd",
+ "byteorder",
+ "rand",
+ "rand_core",
+ "rustcrypto-ff_derive",
+ "subtle",
+]
+
+[[package]]
+name = "rustcrypto-ff_derive"
+version = "0.14.0-pre"
+dependencies = [
+ "addchain",
+ "num-bigint",
+ "num-integer",
+ "num-traits",
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
 ]
 
 [[package]]

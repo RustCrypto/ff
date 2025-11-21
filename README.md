@@ -1,6 +1,8 @@
-# ff
+# RustCrypto: ff
 
 `ff` is a finite field library written in pure Rust, with no `unsafe{}` code.
+
+This is a fork of https://github.com/zkcrypto/ff
 
 ## RFC process
 

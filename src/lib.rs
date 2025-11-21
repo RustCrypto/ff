@@ -405,7 +405,7 @@ pub trait WithSmallOrderMulGroup<const N: u8>: PrimeField {
 /// # #[cfg(feature = "derive")] {
 /// # // Fake this so we don't actually need a dev-dependency on bls12_381.
 /// # mod bls12_381 {
-/// #     use ff::{Field, PrimeField};
+/// #     use rustcrypto_ff::{Field, PrimeField};
 /// #
 /// #     #[derive(PrimeField)]
 /// #     #[PrimeFieldModulus = "52435875175126190479447740508185965837690552500527637822603658699938581184513"]
@@ -413,7 +413,7 @@ pub trait WithSmallOrderMulGroup<const N: u8>: PrimeField {
 /// #     #[PrimeFieldReprEndianness = "little"]
 /// #     pub struct Scalar([u64; 4]);
 /// #
-/// #     impl ff::FromUniformBytes<64> for Scalar {
+/// #     impl rustcrypto_ff::FromUniformBytes<64> for Scalar {
 /// #         fn from_uniform_bytes(_bytes: &[u8; 64]) -> Self {
 /// #             // Fake impl for doctest
 /// #             Scalar::ONE
@@ -423,7 +423,7 @@ pub trait WithSmallOrderMulGroup<const N: u8>: PrimeField {
 /// #
 /// use blake2b_simd::blake2b;
 /// use bls12_381::Scalar;
-/// use ff::FromUniformBytes;
+/// use rustcrypto_ff::FromUniformBytes;
 ///
 /// // `bls12_381::Scalar` implements `FromUniformBytes<64>`, and BLAKE2b (by default)
 /// // produces a 64-byte hash.
