@@ -9,10 +9,10 @@ edition = "2021"
 rust-version = "1.85"
 description = "Library for building and interfacing with finite fields"
 readme = "README.md"
-documentation = "https://docs.rs/ff/"
-homepage = "https://github.com/zkcrypto/ff"
+documentation = "https://docs.rs/rustcrypto-ff/"
+homepage = "https://github.com/RustCrypto/ff"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/zkcrypto/ff"
+repository = "https://github.com/RustCrypto/ff"
 
 [dependencies]
 bitvec = { version = "1", default-features = false, optional = true }
