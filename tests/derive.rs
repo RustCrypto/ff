@@ -3,7 +3,7 @@
 //! of the APIs provided by `ff`, such as batch inversion.
 
 #[macro_use]
-extern crate ff;
+extern crate rustcrypto_ff as ff;
 
 /// The BLS12-381 scalar field.
 #[derive(PrimeField)]

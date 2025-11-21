@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ ubuntu-latest, windows-latest, macOS-latest ]
     steps:
       - uses: actions/checkout@v4
       - name: Run tests
@@ -26,7 +26,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ ubuntu-latest, windows-latest, macOS-latest ]
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
@@ -70,7 +70,7 @@ jobs:
       - name: Add ff as a dependency of the synthetic crate
         working-directory: ./ci-build
         # run: cargo add --no-default-features --path ../crate_root
-        run: sed -i 's;\[dependencies\];\[dependencies\]\nff = { path = "../crate_root", default-features = false };g' ./Cargo.toml
+        run: sed -i 's;\[dependencies\];\[dependencies\]\nrustcrypto-ff = { path = "../crate_root", default-features = false };g' ./Cargo.toml
       - name: Add target
         working-directory: ./ci-build
         run: rustup target add ${{ matrix.target }}
@@ -80,7 +80,7 @@ jobs:
       - name: Enable the bits feature of ff
         working-directory: ./ci-build
         # run: cargo add --no-default-features --features bits --path ../crate_root
-        run: sed -i 's;ff = { path = "../crate_root", default-features = false };ff = { path = "../crate_root", default-features = false, features = ["bits"] };g' ./Cargo.toml
+        run: sed -i 's;rustcrypto-ff = { path = "../crate_root", default-features = false };rustcrypto-ff = { path = "../crate_root", default-features = false, features = ["bits"] };g' ./Cargo.toml
       - name: Build for target with the bits feature
         working-directory: ./ci-build
         run: cargo build --verbose --target ${{ matrix.target }}
