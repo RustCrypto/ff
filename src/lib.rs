@@ -304,6 +304,15 @@ pub trait PrimeField: Field + From<u64> {
     /// encodings of field elements should be treated as opaque.
     fn to_repr(&self) -> Self::Repr;
 
+    /// Convert an element of the prime field into a little endian byte representation.
+    ///
+    /// The provided implementation assumes [`PrimeField::to_repr`] returns a little endian
+    /// representation and needs to be overridden if it uses big endian.
+    // TODO(tarcieri): this is largely a hack to make `group::Wnaf` work. Ideally it could go away.
+    fn to_le_repr(&self) -> Self::Repr {
+        self.to_repr()
+    }
+
     /// Returns true iff this element is odd.
     fn is_odd(&self) -> Choice;
 
